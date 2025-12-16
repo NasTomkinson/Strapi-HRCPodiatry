@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_components_ct_as",
+  "info": {
+    "displayName": "CTAs",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "target": {
+      "type": "boolean"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "inline"
+      ]
+    }
+  },
+  "config": {}
+}
