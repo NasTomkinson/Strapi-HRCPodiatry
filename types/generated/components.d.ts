@@ -9,8 +9,8 @@ export interface ComponentsCtAs extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     label: Schema.Attribute.String;
-    style: Schema.Attribute.Enumeration<['primary', 'secondary', 'inline']>;
     target: Schema.Attribute.Boolean;
+    variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'inline']>;
   };
 }
 

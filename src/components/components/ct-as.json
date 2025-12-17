@@ -15,7 +15,7 @@
     "target": {
       "type": "boolean"
     },
-    "style": {
+    "variant": {
       "type": "enumeration",
       "enum": [
         "primary",
