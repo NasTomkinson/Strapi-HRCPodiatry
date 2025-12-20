@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "composites": {
+      "type": "dynamiczone",
+      "components": [
+        "composites.hero",
+        "composites.generic-content",
+        "composites.cta-section"
+      ]
+    }
+  }
+}
