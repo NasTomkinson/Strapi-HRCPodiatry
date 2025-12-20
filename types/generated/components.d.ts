@@ -29,6 +29,21 @@ export interface CompositesCtaSection extends Struct.ComponentSchema {
   };
 }
 
+export interface CompositesGenericContent extends Struct.ComponentSchema {
+  collectionName: 'components_composites_generic_contents';
+  info: {
+    displayName: 'Generic Content';
+    icon: 'filter';
+  };
+  attributes: {
+    copy: Schema.Attribute.Blocks;
+    ctas: Schema.Attribute.Component<'components.ct-as', true>;
+    heading: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subheading: Schema.Attribute.String;
+  };
+}
+
 export interface CompositesHero extends Struct.ComponentSchema {
   collectionName: 'components_composites_heroes';
   info: {
@@ -48,6 +63,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'components.ct-as': ComponentsCtAs;
       'composites.cta-section': CompositesCtaSection;
+      'composites.generic-content': CompositesGenericContent;
       'composites.hero': CompositesHero;
     }
   }

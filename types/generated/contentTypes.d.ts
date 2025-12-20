@@ -442,7 +442,11 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
   attributes: {
     composites: Schema.Attribute.DynamicZone<
-      ['composites.hero', 'composites.cta-section']
+      [
+        'composites.hero',
+        'composites.cta-section',
+        'composites.generic-content',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

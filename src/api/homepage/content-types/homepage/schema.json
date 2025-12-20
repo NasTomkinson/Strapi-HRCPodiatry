@@ -18,7 +18,8 @@
       "type": "dynamiczone",
       "components": [
         "composites.hero",
-        "composites.cta-section"
+        "composites.cta-section",
+        "composites.generic-content"
       ]
     }
   }

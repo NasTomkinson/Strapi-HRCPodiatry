@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_composites_generic_contents",
+  "info": {
+    "displayName": "Generic Content",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "blocks"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ctas": {
+      "type": "component",
+      "component": "components.ct-as",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
