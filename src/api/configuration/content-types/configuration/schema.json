@@ -1,0 +1,74 @@
+{
+  "kind": "singleType",
+  "collectionName": "configurations",
+  "info": {
+    "singularName": "configuration",
+    "pluralName": "configurations",
+    "displayName": "Configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ot_monday": {
+      "type": "time",
+      "default": "09:00:00.000"
+    },
+    "ct_monday": {
+      "type": "time",
+      "default": "17:00:00.000"
+    },
+    "ot_tuesday": {
+      "type": "time",
+      "default": "09:00:00.000"
+    },
+    "ct_tuesday": {
+      "type": "time",
+      "default": "17:00:00.000"
+    },
+    "ot_wednesday": {
+      "type": "time",
+      "default": "09:00:00.000"
+    },
+    "ct_wednesday": {
+      "type": "time",
+      "default": "17:00:00.000"
+    },
+    "ot_thursday": {
+      "type": "time",
+      "default": "09:00:00.000"
+    },
+    "ct_thursday": {
+      "type": "time",
+      "default": "17:00:00.000"
+    },
+    "ot_friday": {
+      "type": "time",
+      "default": "09:00:00.000"
+    },
+    "ct_friday": {
+      "type": "time",
+      "default": "17:00:00.000"
+    },
+    "ot_saturday": {
+      "type": "time",
+      "default": "00:00:00.000"
+    },
+    "ct_saturday": {
+      "type": "time",
+      "default": "00:00:00.000"
+    },
+    "ot_sunday": {
+      "type": "time",
+      "default": "00:00:00.000"
+    },
+    "ct_sunday": {
+      "type": "time",
+      "default": "00:00:00.000"
+    },
+    "businessAddress": {
+      "type": "text"
+    }
+  }
+}

@@ -430,6 +430,62 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConfigurationConfiguration extends Struct.SingleTypeSchema {
+  collectionName: 'configurations';
+  info: {
+    displayName: 'Configuration';
+    pluralName: 'configurations';
+    singularName: 'configuration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    businessAddress: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ct_friday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'17:00:00.000'>;
+    ct_monday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'17:00:00.000'>;
+    ct_saturday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'00:00:00.000'>;
+    ct_sunday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'00:00:00.000'>;
+    ct_thursday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'17:00:00.000'>;
+    ct_tuesday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'17:00:00.000'>;
+    ct_wednesday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'17:00:00.000'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::configuration.configuration'
+    > &
+      Schema.Attribute.Private;
+    ot_friday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'09:00:00.000'>;
+    ot_monday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'09:00:00.000'>;
+    ot_saturday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'00:00:00.000'>;
+    ot_sunday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'00:00:00.000'>;
+    ot_thursday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'09:00:00.000'>;
+    ot_tuesday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'09:00:00.000'>;
+    ot_wednesday: Schema.Attribute.Time &
+      Schema.Attribute.DefaultTo<'09:00:00.000'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -546,17 +602,23 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    averageSessions: Schema.Attribute.Integer;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    duration: Schema.Attribute.Time;
+    excerpt: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::treatment.treatment'
     > &
       Schema.Attribute.Private;
+    price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
+    symptoms: Schema.Attribute.Blocks;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1075,6 +1137,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::configuration.configuration': ApiConfigurationConfiguration;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;
       'api::review.review': ApiReviewReview;

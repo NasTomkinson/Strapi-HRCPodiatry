@@ -24,6 +24,24 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "content": {
+      "type": "text"
+    },
+    "symptoms": {
+      "type": "blocks"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "averageSessions": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "time"
     }
   }
 }
