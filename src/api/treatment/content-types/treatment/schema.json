@@ -42,6 +42,12 @@
     },
     "duration": {
       "type": "time"
+    },
+    "submissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::form-submission.form-submission",
+      "mappedBy": "treatment"
     }
   }
 }

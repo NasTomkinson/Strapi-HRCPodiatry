@@ -69,6 +69,31 @@
     },
     "businessAddress": {
       "type": "text"
+    },
+    "locationMap": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "companyNumber": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_composites_card_displays",
+  "info": {
+    "displayName": "Card Display",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "components.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

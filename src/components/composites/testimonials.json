@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_composites_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review"
+    }
+  },
+  "config": {}
+}

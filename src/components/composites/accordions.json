@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_composites_accordions",
+  "info": {
+    "displayName": "Accordions",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "accordion": {
+      "type": "component",
+      "component": "components.accordion",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

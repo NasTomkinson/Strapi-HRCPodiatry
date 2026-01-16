@@ -1,5 +1,32 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsAccordion extends Struct.ComponentSchema {
+  collectionName: 'components_components_accordions';
+  info: {
+    displayName: 'Accordion';
+    icon: 'bulletList';
+  };
+  attributes: {
+    copy: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsCard extends Struct.ComponentSchema {
+  collectionName: 'components_components_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'layout';
+  };
+  attributes: {
+    copy: Schema.Attribute.Text;
+    ctas: Schema.Attribute.Component<'components.ct-as', false>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ComponentsCtAs extends Struct.ComponentSchema {
   collectionName: 'components_components_ct_as';
   info: {
@@ -11,6 +38,44 @@ export interface ComponentsCtAs extends Struct.ComponentSchema {
     label: Schema.Attribute.String;
     target: Schema.Attribute.Boolean;
     variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'inline']>;
+  };
+}
+
+export interface CompositesAccordions extends Struct.ComponentSchema {
+  collectionName: 'components_composites_accordions';
+  info: {
+    displayName: 'Accordions';
+    icon: 'bulletList';
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'components.accordion', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface CompositesCardDisplay extends Struct.ComponentSchema {
+  collectionName: 'components_composites_card_displays';
+  info: {
+    displayName: 'Card Display';
+    icon: 'grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'components.card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
+  };
+}
+
+export interface CompositesContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_composites_contact_forms';
+  info: {
+    displayName: 'Contact Form';
+    icon: 'paintBrush';
+  };
+  attributes: {
+    copy: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
   };
 }
 
@@ -58,13 +123,32 @@ export interface CompositesHero extends Struct.ComponentSchema {
   };
 }
 
+export interface CompositesTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_composites_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    reviews: Schema.Attribute.Relation<'oneToMany', 'api::review.review'>;
+    subheading: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.accordion': ComponentsAccordion;
+      'components.card': ComponentsCard;
       'components.ct-as': ComponentsCtAs;
+      'composites.accordions': CompositesAccordions;
+      'composites.card-display': CompositesCardDisplay;
+      'composites.contact-form': CompositesContactForm;
       'composites.cta-section': CompositesCtaSection;
       'composites.generic-content': CompositesGenericContent;
       'composites.hero': CompositesHero;
+      'composites.testimonials': CompositesTestimonials;
     }
   }
 }

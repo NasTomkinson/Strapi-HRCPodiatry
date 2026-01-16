@@ -19,7 +19,11 @@
       "components": [
         "composites.hero",
         "composites.cta-section",
-        "composites.generic-content"
+        "composites.generic-content",
+        "composites.accordions",
+        "composites.contact-form",
+        "composites.testimonials",
+        "composites.card-display"
       ]
     }
   }

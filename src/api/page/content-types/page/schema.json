@@ -14,12 +14,20 @@
     "title": {
       "type": "string"
     },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
     "composites": {
       "type": "dynamiczone",
       "components": [
         "composites.hero",
         "composites.generic-content",
-        "composites.cta-section"
+        "composites.cta-section",
+        "composites.testimonials",
+        "composites.contact-form",
+        "composites.card-display",
+        "composites.accordions"
       ]
     }
   }
