@@ -1,6 +1,7 @@
 export default () => ({
     upload: {
         config: {
+            provider: "local",
             breakpoints: {
                 thumbnail: 156,
                 small: 640,

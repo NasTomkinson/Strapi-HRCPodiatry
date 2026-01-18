@@ -90,6 +90,7 @@ export interface CompositesCtaSection extends Struct.ComponentSchema {
     ctas: Schema.Attribute.Component<'components.ct-as', true>;
     heading: Schema.Attribute.String;
     media: Schema.Attribute.Media<'images' | 'videos'>;
+    reverseOrder: Schema.Attribute.Boolean;
     subheading: Schema.Attribute.String;
   };
 }

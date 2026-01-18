@@ -15,6 +15,9 @@
     "copy": {
       "type": "blocks"
     },
+    "reverseOrder": {
+      "type": "boolean"
+    },
     "media": {
       "type": "media",
       "multiple": false,
