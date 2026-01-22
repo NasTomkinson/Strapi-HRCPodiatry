@@ -657,6 +657,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
   };
   attributes: {
     averageSessions: Schema.Attribute.Integer;
+    bookingUrl: Schema.Attribute.String;
     content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

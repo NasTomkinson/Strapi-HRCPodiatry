@@ -48,6 +48,9 @@
       "relation": "oneToMany",
       "target": "api::form-submission.form-submission",
       "mappedBy": "treatment"
+    },
+    "bookingUrl": {
+      "type": "string"
     }
   }
 }
