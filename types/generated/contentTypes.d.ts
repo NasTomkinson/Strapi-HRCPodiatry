@@ -656,9 +656,17 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    averageSessions: Schema.Attribute.Integer;
     bookingUrl: Schema.Attribute.String;
-    content: Schema.Attribute.Text;
+    composites: Schema.Attribute.DynamicZone<
+      [
+        'composites.testimonials',
+        'composites.generic-content',
+        'composites.cta-section',
+        'composites.contact-form',
+        'composites.card-display',
+        'composites.accordions',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -677,7 +685,6 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::form-submission.form-submission'
     >;
-    symptoms: Schema.Attribute.Blocks;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

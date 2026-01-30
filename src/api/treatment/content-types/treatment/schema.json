@@ -28,17 +28,8 @@
     "excerpt": {
       "type": "text"
     },
-    "content": {
-      "type": "text"
-    },
-    "symptoms": {
-      "type": "blocks"
-    },
     "price": {
       "type": "decimal"
-    },
-    "averageSessions": {
-      "type": "integer"
     },
     "duration": {
       "type": "time"
@@ -51,6 +42,17 @@
     },
     "bookingUrl": {
       "type": "string"
+    },
+    "composites": {
+      "type": "dynamiczone",
+      "components": [
+        "composites.testimonials",
+        "composites.generic-content",
+        "composites.cta-section",
+        "composites.contact-form",
+        "composites.card-display",
+        "composites.accordions"
+      ]
     }
   }
 }
