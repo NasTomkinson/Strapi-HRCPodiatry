@@ -40,7 +40,7 @@
       "target": "api::form-submission.form-submission",
       "mappedBy": "treatment"
     },
-    "bookingUrl": {
+    "bestFor": {
       "type": "string"
     },
     "composites": {

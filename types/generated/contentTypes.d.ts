@@ -656,7 +656,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    bookingUrl: Schema.Attribute.String;
+    bestFor: Schema.Attribute.String;
     composites: Schema.Attribute.DynamicZone<
       [
         'composites.testimonials',
