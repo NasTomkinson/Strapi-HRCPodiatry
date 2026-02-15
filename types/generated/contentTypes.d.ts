@@ -678,6 +678,7 @@ export interface ApiTreatmentTreatment extends Struct.CollectionTypeSchema {
       'api::treatment.treatment'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
