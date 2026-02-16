@@ -67,18 +67,11 @@
       "type": "time",
       "default": "00:00:00.000"
     },
-    "businessAddress": {
+    "brierfieldAddress": {
       "type": "text"
     },
-    "locationMap": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "harrogateAddress": {
+      "type": "text"
     },
     "companyNumber": {
       "type": "string"

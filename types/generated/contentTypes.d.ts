@@ -469,7 +469,7 @@ export interface ApiConfigurationConfiguration extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    businessAddress: Schema.Attribute.Text;
+    brierfieldAddress: Schema.Attribute.Text;
     companyNumber: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -489,6 +489,7 @@ export interface ApiConfigurationConfiguration extends Struct.SingleTypeSchema {
     ct_wednesday: Schema.Attribute.Time &
       Schema.Attribute.DefaultTo<'17:00:00.000'>;
     facebook: Schema.Attribute.String;
+    harrogateAddress: Schema.Attribute.Text;
     instagram: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -496,9 +497,6 @@ export interface ApiConfigurationConfiguration extends Struct.SingleTypeSchema {
       'api::configuration.configuration'
     > &
       Schema.Attribute.Private;
-    locationMap: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     ot_friday: Schema.Attribute.Time &
       Schema.Attribute.DefaultTo<'09:00:00.000'>;
     ot_monday: Schema.Attribute.Time &
