@@ -56,6 +56,11 @@
         "composites.card-display",
         "composites.accordions"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

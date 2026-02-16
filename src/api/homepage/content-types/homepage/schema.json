@@ -25,6 +25,11 @@
         "composites.testimonials",
         "composites.card-display"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

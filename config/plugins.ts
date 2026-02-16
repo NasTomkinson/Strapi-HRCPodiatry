@@ -25,6 +25,10 @@ export default ({env}) => {
                 large: 1024,
             },
         },
-    }}
+    },
+    seo: {
+        enabled: true,
+    }, 
+}
 
 };
