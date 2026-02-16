@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_components_clinics",
+  "info": {
+    "displayName": "clinic",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "string"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bookingUrl": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "mapImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mapUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

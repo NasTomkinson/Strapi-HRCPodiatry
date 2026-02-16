@@ -27,6 +27,25 @@ export interface ComponentsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsClinic extends Struct.ComponentSchema {
+  collectionName: 'components_components_clinics';
+  info: {
+    displayName: 'clinic';
+    icon: 'house';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    background: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    bookingUrl: Schema.Attribute.String;
+    copy: Schema.Attribute.String;
+    mapImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mapUrl: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsCtAs extends Struct.ComponentSchema {
   collectionName: 'components_components_ct_as';
   info: {
@@ -142,6 +161,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'components.accordion': ComponentsAccordion;
       'components.card': ComponentsCard;
+      'components.clinic': ComponentsClinic;
       'components.ct-as': ComponentsCtAs;
       'composites.accordions': CompositesAccordions;
       'composites.card-display': CompositesCardDisplay;
