@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_icon_cards",
+  "info": {
+    "displayName": "Icon Card",
+    "icon": "rocket"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

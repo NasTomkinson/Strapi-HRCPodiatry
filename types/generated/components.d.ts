@@ -60,6 +60,20 @@ export interface ComponentsCtAs extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsIconCard extends Struct.ComponentSchema {
+  collectionName: 'components_components_icon_cards';
+  info: {
+    displayName: 'Icon Card';
+    icon: 'rocket';
+  };
+  attributes: {
+    copy: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
+  };
+}
+
 export interface CompositesAccordions extends Struct.ComponentSchema {
   collectionName: 'components_composites_accordions';
   info: {
@@ -80,8 +94,14 @@ export interface CompositesCardDisplay extends Struct.ComponentSchema {
   };
   attributes: {
     cards: Schema.Attribute.Component<'components.card', true>;
+    enableCarousel: Schema.Attribute.Boolean;
     heading: Schema.Attribute.String;
+    iconCards: Schema.Attribute.Component<'components.icon-card', true>;
     subheading: Schema.Attribute.String;
+    treatments: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::treatment.treatment'
+    >;
   };
 }
 
@@ -214,6 +234,7 @@ declare module '@strapi/strapi' {
       'components.card': ComponentsCard;
       'components.clinic': ComponentsClinic;
       'components.ct-as': ComponentsCtAs;
+      'components.icon-card': ComponentsIconCard;
       'composites.accordions': CompositesAccordions;
       'composites.card-display': CompositesCardDisplay;
       'composites.contact-form': CompositesContactForm;

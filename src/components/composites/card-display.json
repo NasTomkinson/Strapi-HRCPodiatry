@@ -16,6 +16,19 @@
       "type": "component",
       "component": "components.card",
       "repeatable": true
+    },
+    "iconCards": {
+      "type": "component",
+      "component": "components.icon-card",
+      "repeatable": true
+    },
+    "treatments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::treatment.treatment"
+    },
+    "enableCarousel": {
+      "type": "boolean"
     }
   },
   "config": {}
