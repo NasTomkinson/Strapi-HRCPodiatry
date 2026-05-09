@@ -471,6 +471,7 @@ export interface ApiConfigurationConfiguration extends Struct.SingleTypeSchema {
   attributes: {
     brierfieldAddress: Schema.Attribute.Text;
     companyNumber: Schema.Attribute.String;
+    contactNumber: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

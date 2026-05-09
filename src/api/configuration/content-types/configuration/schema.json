@@ -87,6 +87,9 @@
     },
     "youtube": {
       "type": "string"
+    },
+    "contactNumber": {
+      "type": "string"
     }
   }
 }
