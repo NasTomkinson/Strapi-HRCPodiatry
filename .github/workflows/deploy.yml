@@ -19,6 +19,24 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
+            - name: Prepare clean app directory on VPS
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USER }}
+                  key: ${{ secrets.VPS_SSH }}
+                  script: |
+                      mkdir -p ${{ env.APP_DIR }}/public/uploads
+
+                      find ${{ env.APP_DIR }} -mindepth 1 -maxdepth 1 \
+                        ! -name '.env' \
+                        ! -name 'public' \
+                        -exec rm -rf {} +
+
+                      find ${{ env.APP_DIR }}/public -mindepth 1 -maxdepth 1 \
+                        ! -name 'uploads' \
+                        -exec rm -rf {} +
+
             - name: Sync project to VPS
               uses: appleboy/scp-action@v0.1.7
               with:
@@ -37,7 +55,14 @@ jobs:
                   script: |
                       cd ${{ env.APP_DIR }}
 
-                      docker build --no-cache -f Dockerfile.prod -t ${{ env.IMAGE_NAME }} .
+                      docker build \
+                        --pull \
+                        --no-cache \
+                        --build-arg GIT_SHA=${{ github.sha }} \
+                        -f Dockerfile.prod \
+                        -t ${{ env.IMAGE_NAME }}:${{ github.sha }} \
+                        -t ${{ env.IMAGE_NAME }}:latest \
+                        .
 
                       docker stop ${{ env.CONTAINER_NAME }} || true
                       docker rm ${{ env.CONTAINER_NAME }} || true
@@ -47,4 +72,4 @@ jobs:
                         --restart unless-stopped \
                         -p 1337:1337 \
                         --env-file .env \
-                        ${{ env.IMAGE_NAME }}
+                        ${{ env.IMAGE_NAME }}:${{ github.sha }}
